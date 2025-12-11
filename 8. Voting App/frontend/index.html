@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Docker Voting App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Docker Voting App</h1>
+    <p>Vote for your favorite:</p>
+
+    <div class="buttons">
+      <button id="vote-cats">Vote for Cats 😺</button>
+      <button id="vote-dogs">Vote for Dogs 🐶</button>
+    </div>
+
+    <div class="results">
+      <h2>Results</h2>
+      <p>Cats: <span id="cats-count">0</span></p>
+      <p>Dogs: <span id="dogs-count">0</span></p>
+      <p>Total votes: <span id="total-count">0</span></p>
+    </div>
+
+    <p class="footer">Running with Docker &amp; Docker Compose</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

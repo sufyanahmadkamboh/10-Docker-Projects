@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile Card</title>
+  <style>
+    :root {
+      --bg: #0f172a;        /* slate-900 */
+      --card: #111827;      /* gray-900 */
+      --text: #e5e7eb;      /* gray-200 */
+      --muted: #a1a1aa;     /* zinc-400 */
+      --accent: #22d3ee;    /* cyan-400 */
+      --ring: rgba(34, 211, 238, 0.25);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(1200px 600px at 20% 10%, #0b1220 0%, var(--bg) 60%) no-repeat fixed;
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    .card {
+      width: min(92vw, 380px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: -40% -40% auto auto;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, var(--ring), transparent 60%);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(40px, -40px);
+    }
+
+    .avatar {
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.15);
+      outline: 6px solid rgba(255,255,255,0.04);
+      display: block;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
+
+    .header { display: flex; gap: 16px; align-items: center; }
+
+    .name {
+      margin: 0 0 4px;
+      font-size: 1.4rem;
+      line-height: 1.2;
+      letter-spacing: 0.2px;
+    }
+
+    .role {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .bio {
+      margin: 16px 0 20px;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: #cbd5e1; /* slate-300 */
+    }
+
+    .meta { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .tag {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .cta {
+      margin-top: 18px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      cursor: pointer;
+      flex: 1;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      color: var(--text);
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1.5px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 24px rgba(34, 211, 238, 0.18);
+    }
+
+    .btn.primary {
+      border-color: var(--accent);
+    }
+
+    /* Small print */
+    .footer {
+      margin-top: 14px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <article class="card" role="region" aria-label="Profile card">
+    <header class="header">
+      <!-- Replace the src with your photo URL -->
+      <img class="avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMvRgFLuNDJLguYkng0o_xl5nqxFXXLQP2xA&s?w=300&q=80&auto=format&fit=crop" alt="Profile photo of Your Name" />
+      <div>
+        <!-- Your name -->
+        <h1 class="name">Sufyan Ahmad kamboh</h1>
+        <!-- Your profession -->
+        <p class="role">DevOps Engieer</p>
+      </div>
+    </header>
+
+    <!-- Optional short bio -->
+    <p class="bio">DevOps Engineer | Expertise in AWS, VoIP Solutions, and Cloud Contact Centers<br><br>
+
+As a passionate DevOps Engineer, I thrive on optimizing and automating infrastructure to deliver scalable, secure, and high-performance systems. At Vivid Technologies, I am at the forefront of transforming customer service experiences, leveraging AWS, Docker, and Kubernetes to enhance system reliability and efficiency. My previous role at LastingSales/HadiTelecom saw me manage a VoIP platform processing over 6 million calls monthly, serving 3500+ corporate clients across diverse sectors. I am dedicated to continuous learning and innovation, with a focus on driving operational excellence and delivering value to both consumers and enterprises.</p>
+
+    <!-- Optional meta tags -->
+    <div class="meta">
+      <span class="tag">Docker</span>
+      <span class="tag">Kubernetes</span>
+      <span class="tag">Git</span>
+      <span class="tag">Jenkins</span>
+      <span class="tag">Ansible</span>
+      <span class="tag">Terraform</span>
+      <span class="tag">AWS</span>
+      <span class="tag">Golang</span>
+    </div>
+
+    <!-- Buttons: update hrefs to your links -->
+    <div class="cta">
+      <a class="btn primary" href="mailto:sufyanahmad1@gmail.com">Contact</a>
+      <a class="btn" href="https://www.linkedin.com/in/sufyanahmadkamboh/" target="_blank" rel="noreferrer noopener">Portfolio</a>
+    </div>
+
+  </article>
+</body>
+</html>

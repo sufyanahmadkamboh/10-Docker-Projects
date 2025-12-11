@@ -1,0 +1,14 @@
+{
+  "name": "task-queue",
+  "version": "1.0.0",
+  "main": "producer.js",
+  "license": "MIT",
+  "scripts": {
+    "start:producer": "node producer.js",
+    "start:worker": "node worker.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "ioredis": "^5.4.2"
+  }
+}
